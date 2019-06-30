@@ -8,4 +8,5 @@ const VideoList = ({videos , handleVideoSelect}) => {
 
     return <div className='ui relaxed divided list'>{renderedVideos}</div>;
 };
+
 export default VideoList;
