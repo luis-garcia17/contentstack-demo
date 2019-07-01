@@ -21,17 +21,6 @@ class App extends React.Component {
             });
     }
 
-    // handleSubmit = async (termFromSearchBar) => {
-    //     const response = await youtube.get('/search', {
-    //         params: {
-    //             q: termFromSearchBar
-    //         }
-    //     })
-    //     this.setState({
-    //         videos: response.data.items
-    //     })
-    // };
-
     handleVideoSelect = (video) => {
         this.setState({selectedVideo: video});
     }
@@ -39,7 +28,6 @@ class App extends React.Component {
     render() {
         return (
             <div className='ui container' style={{marginTop: '1em'}}>
-                {/* <SearchBar handleFormSubmit={this.handleSubmit}/> */}
                 <Header />
                 <HeroBanner />
                 <div className='ui grid'>

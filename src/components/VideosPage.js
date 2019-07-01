@@ -19,25 +19,47 @@ class VideosPage extends React.Component {
                 maxResults: 6
             }
         });
-        //console.log(response);
         this.setState({
             videos: response.data.items
         });
-        //console.log(this.state.selectedVideo);
     }
 
     handleVideoSelect = video => {
         this.setState({selectedVideo: video});
         this.props.history.push(`video/${video.id}`)
-        //console.log(this.props);
     }
+
+    handleQuantity = async quantity => {         
+        const response = await youtube.get('', {
+            params: {
+                maxResults: quantity
+            }
+        });
+        this.setState({
+            videos: response.data.items
+        });
+    }
+
+    handleOrderByLatest = () => {
+        this.setState({
+            videos: this.state.videos.reverse()
+        })
+    }
+
+    handleOrderByOldest = () => {
+        this.setState({
+            videos: this.state.videos.reverse()
+        })
+    }
+
+    //Might need to use prevState or componentDidUpdate
 
     render() {
         return (
             <div>
             <Header />
             <HeroBanner />
-            <VideoListFilters />            
+            <VideoListFilters handleQuantity={this.handleQuantity} handleOrderByLatest={this.handleOrderByLatest} handleOrderByOldest={this.handleOrderByOldest} />            
                 <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos} />            
                 <div>
                     <button>prev</button>
@@ -47,7 +69,6 @@ class VideosPage extends React.Component {
         </div>
         )
     }
-
 }
 
 export default VideosPage;

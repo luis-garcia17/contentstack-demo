@@ -3,7 +3,7 @@ import {Router, Route, Switch} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import App from '../components/App';
 import VideosPage from '../components/VideosPage';
-import VideoDetail from '../components/VideoDetail';
+import VideoInfo from '../components/VideoInfo';
 import NotFoundPage from '../components/NotFoundPage';
 
 export const history = createHistory();
@@ -14,7 +14,7 @@ const AppRouter = () => (
         <Switch>
             <Route path="/" component={App} exact={true} />
             <Route path="/videos" component={VideosPage} />
-            <Route path="/video/:id" component={VideoDetail} />
+            <Route path="/video/:id" component={VideoInfo} />
             <Route component={NotFoundPage} />
         </Switch>    
     </div>
