@@ -61,10 +61,10 @@ class VideosPage extends React.Component {
             <HeroBanner />
             <VideoListFilters handleQuantity={this.handleQuantity} handleOrderByLatest={this.handleOrderByLatest} handleOrderByOldest={this.handleOrderByOldest} />            
                 <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos} />            
-                <div>
+                {/* <div>
                     <button>prev</button>
                     <button>next</button>
-                </div>
+                </div> */}
             <Footer />
         </div>
         )
